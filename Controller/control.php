@@ -29,6 +29,11 @@ class control{
 
         header("Location: index.php");
     }
+
+    public function eliminar(){
+        $this->MODEL->delete($_REQUEST['id']);
+        header("Location: index.php"); 
+    } 
 }
 
 ?>

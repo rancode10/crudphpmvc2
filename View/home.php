@@ -28,6 +28,7 @@
                         <th class="white-text center-align">Talla</th>
                         <th class="white-text center-align">Genero</th>
                         <th class="white-text center-align">Cantidad</th>
+                        <th class="white-text center-align">Eliminar</th>                        
                     </tr>                
                 <?php foreach ($this->MODEL->listar() as $k) : ?>
                     <tr>
@@ -38,6 +39,9 @@
                         <td class="center-align"><?php echo $k->talla; ?></td>
                         <td class="center-align"><?php echo $k->genero; ?></td>
                         <td class="center-align"><?php echo $k->cantidad; ?></td>
+                        <td class="center-align">
+                            <a href="?c=eliminar&id=<?php echo $k->id_zapato; ?>" class="btn red z-depth-3">Eliminar</a>
+                        </td>                        
                     </tr>
                 <?php endforeach ?>
                 </table>     
