@@ -40,7 +40,8 @@
                         <td class="center-align"><?php echo $k->cantidad; ?></td>
                     </tr>
                 <?php endforeach ?>
-                </table>                
+                </table>     
+                <a href="?c=nuevo" class="btn btn-block black z-depth-3">Nuevo</a>           
             </div>
         </div>
     </div>
