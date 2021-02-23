@@ -22,7 +22,8 @@
                 <div class="col m3"></div>
                 <div class="col m3">Precio : </div>
                 <div class="col m3">
-                    <input type="text" name="txtPrecio">
+                    <input type="hidden" name="txtID" value="<?php echo $obj->id_zapato; ?>">
+                    <input type="text" name="txtPrecio" value="<?php echo $obj->precio; ?>">
                 </div>            
                 <div class="col m3"></div>            
             </div>
@@ -30,7 +31,7 @@
                 <div class="col m3"></div>
                 <div class="col m3">Color : </div>
                 <div class="col m3">
-                    <input type="text" name="txtColor">
+                    <input type="text" name="txtColor" value="<?php echo $obj->color; ?>">
                 </div>            
                 <div class="col m3"></div>            
             </div>
@@ -40,7 +41,7 @@
                 <div class="col m3">
                     <select name="cmbEstilo">
                         <?php foreach ($this->MODEL->cargarEstilo() as $k) : ?>
-                            <option value="<?php echo $k->id_estilo ?>"> <?php echo $k->estilo ?> </option>
+                            <option value="<?php echo $k->id_estilo ?>" <?php echo $k->id_estilo == $obj->id_estilo ? 'selected' : '' ?> > <?php echo $k->estilo ?> </option>
                         <?php endforeach; ?>
                     </select>
                 </div>            
@@ -52,7 +53,7 @@
                 <div class="col m3">
                     <select name="cmbTalla">
                         <?php foreach ($this->MODEL->cargarTalla() as $k) : ?>
-                            <option value="<?php echo $k->id_talla ?>"> <?php echo $k->talla ?> </option>
+                            <option value="<?php echo $k->id_talla ?>" <?php echo $k->id_talla == $obj->id_talla ? 'selected' : '' ?> > <?php echo $k->talla ?> </option>
                         <?php endforeach; ?>
                     </select>
                 </div>            
@@ -64,7 +65,7 @@
                 <div class="col m3">
                     <select name="cmbGenero">
                         <?php foreach ($this->MODEL->cargarGenero() as $k) : ?>
-                            <option value="<?php echo $k->id_genero ?>"> <?php echo $k->genero ?> </option>
+                            <option value="<?php echo $k->id_genero ?>" <?php echo $k->id_genero == $obj->id_genero ? 'selected' : '' ?> > <?php echo $k->genero ?> </option>
                         <?php endforeach; ?>                      
                     </select>
                 </div>            
@@ -74,7 +75,7 @@
                 <div class="col m3"></div>
                 <div class="col m3">Cantidad : </div>
                 <div class="col m3">
-                    <input type="text" name="txtCantidad">
+                    <input type="text" name="txtCantidad" value="<?php echo $obj->cantidad; ?>">
                 </div>            
                 <div class="col m3"></div>            
             </div>

@@ -88,6 +88,28 @@ class zapato{
         }
     }
 
+    //funcion para cargar registro seleccionado
+    public function cargarID($id){
+        try {
+            $query = "SELECT * from dbozapato where id_zapato = ?";
+            $stmt = $this->CNX->prepare($query);
+            $stmt -> execute(array($id));
+            return $stmt->fetch(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    //funcion para actualizar
+    public function actualizar(zapato $data){
+        try {
+            $query = "UPDATE dbozapato set precio=?,color=?,id_estilo=?,id_talla=?,id_genero=?,cantidad=? where id_zapato = ?";
+            $this->CNX->prepare($query)->execute(array($data->precio,$data->color,$data->id_estilo,$data->id_talla,$data->id_genero,$data->cantidad, $data->id_zapato ));            
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
 }
 
 ?>

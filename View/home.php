@@ -28,7 +28,8 @@
                         <th class="white-text center-align">Talla</th>
                         <th class="white-text center-align">Genero</th>
                         <th class="white-text center-align">Cantidad</th>
-                        <th class="white-text center-align">Eliminar</th>                        
+                        <th class="white-text center-align">Eliminar</th>
+                        <th class="white-text center-align">Actualizar</th>
                     </tr>                
                 <?php foreach ($this->MODEL->listar() as $k) : ?>
                     <tr>
@@ -41,7 +42,10 @@
                         <td class="center-align"><?php echo $k->cantidad; ?></td>
                         <td class="center-align">
                             <a href="?c=eliminar&id=<?php echo $k->id_zapato; ?>" class="btn red z-depth-3">Eliminar</a>
-                        </td>                        
+                        </td>
+                        <td class="center-align">
+                            <a href="?c=nuevo&id=<?php echo $k->id_zapato; ?>" class="btn green z-depth-3">Actualizar</a>
+                        </td>
                     </tr>
                 <?php endforeach ?>
                 </table>     
